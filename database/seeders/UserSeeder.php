@@ -14,15 +14,15 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Create a super admin account
-        User::create([
+        User::create(attributes: [
             'name' => 'Super Admin',
             'email' => 'super.admin@example.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('12345678'), // Secure hashed password
-            'remember_token' => Str::random(10),
+            'password' => Hash::make(value: '12345678'), // Secure hashed password
+            'remember_token' => Str::random(length: 10),
         ]);
     }
 }
