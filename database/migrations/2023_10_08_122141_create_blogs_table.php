@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string(column: 'title');
             $table->text(column: 'content');
-            $table->integer(column: 'price');
             $table->boolean(column: 'status')->default(value: true);
             $table->timestamps();
         });

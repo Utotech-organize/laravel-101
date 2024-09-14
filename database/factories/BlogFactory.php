@@ -20,7 +20,6 @@ class BlogFactory extends Factory
             'title' => fake()->name(),
             'content' => fake()->text(),
             'status' => rand(min: 0, max: 1),
-            'price' => rand(min: 0,  max: 100)
         ];
     }
 }
