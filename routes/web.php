@@ -2,57 +2,53 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Define a variable for the client path
+$clientPath = '/clients';
 
 
 // user view
-Route::get('/', function () {
-    return view('index');
+Route::get('/', function () use ($clientPath) {
+    return view($clientPath . '/index');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
+Route::get('/shop', function () use ($clientPath) {
+    return view($clientPath . '/shop');
 });
 
-Route::get('/product-details', function () {
-    return view('product-details');
+Route::get('/product-details', function () use ($clientPath) {
+    return view($clientPath . '/product-details');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
+Route::get('/cart', function () use ($clientPath) {
+    return view($clientPath . '/cart');
 });
 
-Route::get('/checkout', function () {
-    return view('checkout');
+Route::get('/checkout', function () use ($clientPath) {
+    return view($clientPath . '/checkout');
 });
 
 
 
+// Define a variable for the admins path
+$adminPath = '/admins';
 
-// <ul>
-// <li class="active"><a href="/">Home</a></li>
-// <li><a href="/shop">Shop</a></li>
-// <li><a href="/product-details">Product</a></li>
-// <li><a href="/cart">Cart</a></li>
-// <li><a href="/checkout">Checkout</a></li>
-// </ul>
+// user view
+Route::get('/admins', function () use ($adminPath) {
+    return view($adminPath . '/index');
+});
 
-// Route::get('/blog/{name}', function ($name) {
-//     return "this is blog page $name";
-// });
+Route::get('/admins/sample-page', function () use ($adminPath) {
+    return view($adminPath . '/sample-page');
+});
 
+Route::get('/admins/product-details', function () use ($adminPath) {
+    return view($adminPath . '/product-details');
+});
 
-// Route::get('/blog/{name}/{id}', function ($name, $id) {
-//     return "this is blog page $name id: $id";
-// });
+Route::get('/admins/cart', function () use ($adminPath) {
+    return view($adminPath . '/cart');
+});
 
-
-// // admin view
-// Route::get('/admin/login', function () {
-//     return "<h1>this is login page</h1>";
-// })->name('login');
-
-
-// // fallback
-// Route::fallback(function () {
-//     return "ไม่พบหน้าเว็บ";
-// });
+Route::get('/admins/checkout', function () use ($adminPath) {
+    return view($adminPath . '/checkout');
+});
