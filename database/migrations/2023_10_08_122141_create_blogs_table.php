@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create(table: 'blogs', callback: function (Blueprint $table): void {
             $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->boolean('status')->default(true);
+            $table->string(column: 'title');
+            $table->text(column: 'content');
+            $table->integer(column: 'price');
+            $table->boolean(column: 'status')->default(value: true);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists(table: 'blogs');
     }
 };
