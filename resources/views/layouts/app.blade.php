@@ -86,7 +86,7 @@
     <footer class="text-center py-4 mt-auto" style="background-color: #343a40; color: white;">
       <div class="container">
         <p class="mb-0">&copy; 2024 My Blog. All Rights Reserved.</p>
-        <small class="mb-0">Designed with love by Your Name</small>
+        <small class="mb-0">Made by Utotech</small>
       </div>
     </footer>
   </div>
